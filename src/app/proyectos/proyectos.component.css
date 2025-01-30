@@ -160,11 +160,6 @@
   transform: scale(1.1);
 }
 
-/* Mantén los colores de las tecnologías igual en ambos modos */
-.tech-tag {
-  /* ... estilos existentes ... */
-}
-
 /* Ajusta la sombra para el modo oscuro */
 .dark-mode .tarjeta-proyecto {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
