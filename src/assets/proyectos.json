@@ -7,7 +7,7 @@
   },
   {
     "nombre": "Calculadora",
-    "descripcion": "Calculadora interactiva con operaciones básicas y avanzadas",
+    "descripcion": "Calculadora interactiva con operaciones básicas",
     "tecnologias": ["HTML", "CSS", "JavaScript"],
     "imagen": "https://i.ibb.co/q1bwwnh/calculator.jpg"
   },

@@ -21,8 +21,14 @@ export class ProyectosComponent implements OnInit {
   proyectos: Proyecto[] = [];
   buscar: string = '';
   errorMessage: string = '';
+  isDarkMode = false;
 
-  constructor(private proyectosService: ProyectosService) {}
+  constructor(private proyectosService: ProyectosService) {
+    // Recuperar preferencia guardada
+    const savedTheme = localStorage.getItem('theme');
+    this.isDarkMode = savedTheme === 'dark';
+    this.updateTheme();
+  }
 
   ngOnInit() {
     this.proyectosService.getProyectos()
@@ -37,5 +43,15 @@ export class ProyectosComponent implements OnInit {
           this.errorMessage = 'Error al cargar los proyectos';
         }
       });
+  }
+
+  toggleTheme() {
+    this.isDarkMode = !this.isDarkMode;
+    localStorage.setItem('theme', this.isDarkMode ? 'dark' : 'light');
+    this.updateTheme();
+  }
+
+  private updateTheme() {
+    this.isDarkMode = localStorage.getItem('theme') === 'dark';
   }
 }

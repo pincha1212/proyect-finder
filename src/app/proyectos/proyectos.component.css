@@ -82,3 +82,90 @@
   padding: 10px;
   margin: 10px 0;
 }
+
+.container {
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+  background-color: #f5f5f5;
+  color: #333;
+  padding-bottom: 20px;
+}
+
+.container.dark-mode {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+/* Ajustes para modo oscuro */
+.container.dark-mode .tarjeta-proyecto {
+  background-color: #2d2d2d;
+  border-color: #404040;
+  color: #fff;
+}
+
+.container.dark-mode .buscador input {
+  background-color: #2d2d2d;
+  border-color: #404040;
+  color: #fff;
+}
+
+.container.dark-mode .buscador input::placeholder {
+  color: #aaa;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 50px;
+  padding: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.theme-toggle button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle button:hover {
+  transform: rotate(360deg);
+}
+
+/* Estilos específicos para modo oscuro */
+.container.dark-mode .theme-toggle {
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Animación del icono */
+.theme-toggle button span {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* Mantén los colores de las tecnologías igual en ambos modos */
+.tech-tag {
+  /* ... estilos existentes ... */
+}
+
+/* Ajusta la sombra para el modo oscuro */
+.dark-mode .tarjeta-proyecto {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}

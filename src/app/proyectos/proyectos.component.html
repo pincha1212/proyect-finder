@@ -1,5 +1,12 @@
 <!-- src/app/proyectos/proyectos.component.html -->
-<div class="buscador">
+<div class="container" [class.dark-mode]="isDarkMode">
+  <div class="theme-toggle">
+    <button (click)="toggleTheme()" title="{{ isDarkMode ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro' }}">
+      <span>{{ isDarkMode ? '☀️' : '🌙' }}</span>
+    </button>
+  </div>
+
+  <div class="buscador">
     <input [(ngModel)]="buscar" placeholder="Busca por nombre, tecnología o descripción..." />
   </div>
   
@@ -19,4 +26,5 @@
       </div>
     </div>
   </div>
+</div>
   
