@@ -1,0 +1,14 @@
+<!-- src/app/proyectos/proyectos.component.html -->
+<div class="buscador">
+    <input [(ngModel)]="buscar" placeholder="Busca tus proyectos..." />
+  </div>
+  
+  <div class="proyectos-container">
+    <div *ngFor="let proyecto of proyectos | filter: buscar" class="tarjeta-proyecto">
+      <img [src]="proyecto.imagen" alt="Imagen del proyecto" />
+      <h3>{{ proyecto.nombre }}</h3>
+      <p>{{ proyecto.descripcion }}</p>
+      <p><strong>Tecnologías:</strong> {{ proyecto.tecnologias.join(', ') }}</p>
+    </div>
+  </div>
+  
