@@ -1,14 +1,22 @@
 <!-- src/app/proyectos/proyectos.component.html -->
 <div class="buscador">
-    <input [(ngModel)]="buscar" placeholder="Busca tus proyectos..." />
+    <input [(ngModel)]="buscar" placeholder="Busca por nombre, tecnología o descripción..." />
+  </div>
+  
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
   </div>
   
   <div class="proyectos-container">
     <div *ngFor="let proyecto of proyectos | filter: buscar" class="tarjeta-proyecto">
-      <img [src]="proyecto.imagen" alt="Imagen del proyecto" />
+      <img [src]="proyecto.imagen" alt="Imagen de {{proyecto.nombre}}" />
       <h3>{{ proyecto.nombre }}</h3>
       <p>{{ proyecto.descripcion }}</p>
-      <p><strong>Tecnologías:</strong> {{ proyecto.tecnologias.join(', ') }}</p>
+      <div class="tecnologias">
+        <span class="tech-tag" *ngFor="let tech of proyecto.tecnologias" [attr.data-tech]="tech">
+          {{ tech }}
+        </span>
+      </div>
     </div>
   </div>
   

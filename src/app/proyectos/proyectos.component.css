@@ -23,6 +23,7 @@
   border-radius: 8px;
   padding: 15px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
 }
 
 .tarjeta-proyecto img {
@@ -33,5 +34,51 @@
 }
 
 .tarjeta-proyecto h3 {
+  margin: 10px 0;
+}
+
+.tecnologias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.tech-tag {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  margin: 2px;
+  display: inline-block;
+  color: white;
+  font-weight: 500;
+}
+
+.tech-tag[data-tech="HTML"] {
+  background-color: #e34c26;
+}
+
+.tech-tag[data-tech="CSS"] {
+  background-color: #264de4;
+}
+
+.tech-tag[data-tech="JavaScript"] {
+  background-color: #f0db4f;
+  color: black;
+}
+
+.tech-tag[data-tech="API"] {
+  background-color: #00c853;
+  color: black;
+}
+
+.tarjeta-proyecto:hover {
+  transform: translateY(-5px);
+}
+
+.error-message {
+  color: #dc3545;
+  text-align: center;
+  padding: 10px;
   margin: 10px 0;
 }
