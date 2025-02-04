@@ -12,8 +12,8 @@
     "imagen": "https://i.ibb.co/q1bwwnh/calculator.jpg"
   },
   {
-    "nombre": "Netflix Clon",
-    "descripcion": "Clon de Netflix con catálogo de películas ",
+    "nombre": "Clon de página de peliculas",
+    "descripcion": "APP de streaming con TMDB",
     "tecnologias": ["HTML", "CSS", "JavaScript", "API"],
     "imagen": "https://i.ibb.co/cKq3tqcH/netfliz-clone.jpg"
   },
