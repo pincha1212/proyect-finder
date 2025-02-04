@@ -71,6 +71,10 @@
   background-color: #00c853;
   color: black;
 }
+.tech-tag[data-tech="TypeScript"] {
+  background-color: #007ACC;
+}
+
 
 .tarjeta-proyecto:hover {
   transform: translateY(-5px);
