@@ -28,6 +28,12 @@
     "descripcion": "Demo de botones con Hover, sin click",
     "tecnologias": ["HTML", "CSS", "TypeScript"],
     "imagen": "https://i.ibb.co/KjvKF0Sv/buttons.jpg"
+  },
+  {
+    "nombre": "Tema de burbujas",
+    "descripcion": "fondo desenfocado de burbujas",
+    "tecnologias": ["HTML", "CSS", "JavaScript"],
+    "imagen": "https://i.ibb.co/BVDmWQsp/bubbles.jpg"
   }
   
 ] 
