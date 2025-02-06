@@ -40,6 +40,12 @@
     "descripcion": "Sistema de inicio de sesión y registro sin validaciones",
     "tecnologias": ["HTML", "CSS", "JavaScript"],
     "imagen": "https://i.ibb.co/fdYZvjTq/inidemo2.jpg"
+  },
+  {
+    "nombre": "Narrativa: El viaje del alma",
+    "descripcion": "Animacion de scroll con una narrativa cualquiera",
+    "tecnologias": ["HTML", "CSS", "JavaScript"],
+    "imagen": "https://i.ibb.co/9kSsNKH1/narrativa1.jpg"
   }
-  
+
 ] 
