@@ -12,7 +12,7 @@
     "imagen": "https://i.ibb.co/q1bwwnh/calculator.jpg"
   },
   {
-    "nombre": "Clon de página de peliculas",
+    "nombre": "Clon de Netflix",
     "descripcion": "APP de streaming con TMDB",
     "tecnologias": ["HTML", "CSS", "JavaScript", "API"],
     "imagen": "https://i.ibb.co/cKq3tqcH/netfliz-clone.jpg"
@@ -46,6 +46,12 @@
     "descripcion": "Animacion de scroll con una narrativa cualquiera",
     "tecnologias": ["HTML", "CSS", "JavaScript"],
     "imagen": "https://i.ibb.co/9kSsNKH1/narrativa1.jpg"
+  },
+  {
+    "nombre": "Clon de Gemini",
+    "descripcion": "Clon de la página de Gemini",
+    "tecnologias": ["HTML", "CSS", "JavaScript", "API"],
+    "imagen": "https://i.ibb.co/PzwbrwPK/gemini.jpg"
   }
 
 ] 
