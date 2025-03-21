@@ -120,43 +120,36 @@
 
 .tech-tag[data-tech="Angular"] {
   background-color: #dd0031;
-  /* Rojo característico de Angular */
   color: white;
 }
 
 .tech-tag[data-tech="TypeScript"] {
   background-color: #007ACC;
-  /* Azul de TypeScript */
   color: white;
 }
 
 .tech-tag[data-tech="Node.js"] {
   background-color: #68a063;
-  /* Verde de Node.js */
   color: white;
 }
 
 .tech-tag[data-tech="Express.js"] {
   background-color: #000000;
-  /* Negro de Express.js */
   color: white;
 }
 
 .tech-tag[data-tech="MongoDB"] {
   background-color: #4db33d;
-  /* Verde de MongoDB */
   color: white;
 }
 
 .tech-tag[data-tech="GitHub Pages"] {
   background-color: #24292e;
-  /* Negro de GitHub */
   color: white;
 }
 
 .tech-tag[data-tech="Vercel"] {
   background-color: #000000;
-  /* Negro de Vercel */
   color: white;
 }
 
