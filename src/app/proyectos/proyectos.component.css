@@ -1,8 +1,9 @@
 .proyectos-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+  gap: 1.5rem;
   padding: 20px;
+  align-items: stretch;
 }
 
 .buscador {
@@ -19,11 +20,15 @@
 }
 
 .tarjeta-proyecto {
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 15px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .tarjeta-proyecto img {
@@ -37,11 +42,18 @@
   margin: 10px 0;
 }
 
+.tarjeta-proyecto p {
+  flex-grow: 1;
+  margin-bottom: 15px;
+}
+
+
 .tecnologias {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 0.5rem;
   margin-top: 10px;
+  align-items: center;
 }
 
 .tech-tag {
@@ -52,10 +64,43 @@
   display: inline-block;
   color: white;
   font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.tech-more {
+  color: #666;
+  font-size: 1.2rem;
+  margin-left: 6px;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.dark-mode .tech-more {
+  color: #d1d1d1;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Hover effect opcional */
+.tech-more:hover {
+  transform: scale(1.05);
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.dark-mode .tech-more:hover {
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .tech-tag[data-tech="HTML"] {
   background-color: #e34c26;
+  color: white; 
 }
 
 .tech-tag[data-tech="CSS"] {
@@ -71,13 +116,54 @@
   background-color: #00c853;
   color: black;
 }
+
+
+.tech-tag[data-tech="Angular"] {
+  background-color: #dd0031;
+  /* Rojo característico de Angular */
+  color: white;
+}
+
 .tech-tag[data-tech="TypeScript"] {
   background-color: #007ACC;
+  /* Azul de TypeScript */
+  color: white;
+}
+
+.tech-tag[data-tech="Node.js"] {
+  background-color: #68a063;
+  /* Verde de Node.js */
+  color: white;
+}
+
+.tech-tag[data-tech="Express.js"] {
+  background-color: #000000;
+  /* Negro de Express.js */
+  color: white;
+}
+
+.tech-tag[data-tech="MongoDB"] {
+  background-color: #4db33d;
+  /* Verde de MongoDB */
+  color: white;
+}
+
+.tech-tag[data-tech="GitHub Pages"] {
+  background-color: #24292e;
+  /* Negro de GitHub */
+  color: white;
+}
+
+.tech-tag[data-tech="Vercel"] {
+  background-color: #000000;
+  /* Negro de Vercel */
+  color: white;
 }
 
 
 .tarjeta-proyecto:hover {
   transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .error-message {
@@ -105,12 +191,14 @@
   background-color: #2d2d2d;
   border-color: #404040;
   color: #fff;
+  transition: all 0.3s;
 }
 
 .container.dark-mode .buscador input {
   background-color: #2d2d2d;
   border-color: #404040;
   color: #fff;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .container.dark-mode .buscador input::placeholder {

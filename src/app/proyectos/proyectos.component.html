@@ -9,22 +9,24 @@
   <div class="buscador">
     <input [(ngModel)]="buscar" placeholder="Busca por nombre, tecnología o descripción..." />
   </div>
-  
+
   <div *ngIf="errorMessage" class="error-message">
     {{ errorMessage }}
   </div>
-  
+
   <div class="proyectos-container">
-    <div *ngFor="let proyecto of proyectos | filter: buscar" class="tarjeta-proyecto">
+    <div *ngFor="let proyecto of (proyectos | filter: buscar).slice().reverse()" class="tarjeta-proyecto">
       <img [src]="proyecto.imagen" alt="Imagen de {{proyecto.nombre}}" />
       <h3>{{ proyecto.nombre }}</h3>
       <p>{{ proyecto.descripcion }}</p>
       <div class="tecnologias">
-        <span class="tech-tag" *ngFor="let tech of proyecto.tecnologias" [attr.data-tech]="tech">
+        <span class="tech-tag" *ngFor="let tech of proyecto.tecnologias | slice:0:3" [attr.data-tech]="tech">
           {{ tech }}
+        </span>
+        <span class="tech-more" *ngIf="proyecto.tecnologias.length > 3">
+          +{{ proyecto.tecnologias.length - 3 }}
         </span>
       </div>
     </div>
   </div>
 </div>
-  
