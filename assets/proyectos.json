@@ -110,5 +110,21 @@
       "CSS"
     ],
     "imagen": "https://i.ibb.co/xq5yCHbt/recetario-colaborativo.jpg"
+  },
+  {
+    "nombre": "To-Do List App",
+    "descripcion": "Aplicación full-stack para la gestión de tareas personales y profesionales, con seguimiento de prioridades, categorías y estadísticas en tiempo real.",
+    "tecnologias": [
+      "Angular",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "TypeScript",
+      "Chart.js",
+      "Bootstrap",
+      "HTML",
+      "CSS"
+    ],
+    "imagen": "https://i.ibb.co/Xfh7x43S/taksmaster.jpg"
   }
 ]
