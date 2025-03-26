@@ -1,4 +1,3 @@
-// src/app/proyectos/proyectos.component.ts
 import { Component, OnInit } from '@angular/core';
 import { Proyecto } from './proyecto.model';
 import { CommonModule } from '@angular/common';
@@ -8,41 +7,47 @@ import { ProyectosService } from '../services/proyectos.service';
 
 @Component({
   selector: 'app-proyectos',
-  standalone: true,
-  imports: [
-    CommonModule,
-    FormsModule,
-    FilterPipe
-  ],
+  imports: [CommonModule, FormsModule, FilterPipe],
   templateUrl: './proyectos.component.html',
-  styleUrls: ['./proyectos.component.css']
+  styleUrls: ['./proyectos.component.css'],
 })
 export class ProyectosComponent implements OnInit {
   proyectos: Proyecto[] = [];
   buscar: string = '';
   errorMessage: string = '';
   isDarkMode = false;
+  showMoreTech: boolean[] = []; // Para trackear el estado por proyecto
 
   constructor(private proyectosService: ProyectosService) {
-    // Recuperar preferencia guardada
     const savedTheme = localStorage.getItem('theme');
     this.isDarkMode = savedTheme === 'dark';
     this.updateTheme();
   }
 
   ngOnInit() {
-    this.proyectosService.getProyectos()
-      .subscribe({
-        next: (data) => {
-          console.log('Datos cargados:', data); // Para verificar los datos
-          this.proyectos = data;
-          this.errorMessage = '';
-        },
-        error: (error) => {
-          console.error('Error cargando proyectos:', error);
-          this.errorMessage = 'Error al cargar los proyectos';
-        }
-      });
+    this.proyectosService.getProyectos().subscribe({
+      next: (data) => {
+        this.proyectos = data;
+        this.errorMessage = '';
+      },
+      error: (error) => {
+        this.errorMessage = 'Error al cargar los proyectos';
+      },
+    });
+  }
+
+  // Maneja el click en la sección de tecnologías
+  handleTechClick(index: number, techLength: number) {
+    if (techLength <= 3) return; // No hacer nada si hay 3 o menos
+    this.toggleShowMore(index);
+  }
+
+  // Toggle para expandir/colapsar
+  toggleShowMore(index: number) {
+    if (this.showMoreTech[index] === undefined) {
+      this.showMoreTech[index] = false;
+    }
+    this.showMoreTech[index] = !this.showMoreTech[index];
   }
 
   toggleTheme() {

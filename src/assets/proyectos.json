@@ -120,11 +120,28 @@
       "Express.js",
       "MongoDB",
       "TypeScript",
+      "Vercel",
       "Chart.js",
       "Bootstrap",
       "HTML",
       "CSS"
     ],
     "imagen": "https://i.ibb.co/Xfh7x43S/taksmaster.jpg"
+  },
+  {
+    "nombre": "Ahorcado",
+    "descripcion": "Juego clásico de ahorcado. Incluye sistema de intentos, dibujos del ahorcado en cada error y un sistema de puntuaciones.",
+    "tecnologias": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Node.js",
+      "Express.js",
+      "Bootstrap",
+      "MongoDB",
+      "GitHub Pages",
+      "Vercel"
+    ],
+    "imagen": "https://i.ibb.co/tTzMw3R4/El-Ahorcado-web-26-03-2025-00-13.png"
   }
 ]

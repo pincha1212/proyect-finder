@@ -1,31 +1,71 @@
-<!-- src/app/proyectos/proyectos.component.html -->
 <div class="container" [class.dark-mode]="isDarkMode">
+  <!-- Toggle de tema -->
   <div class="theme-toggle">
-    <button (click)="toggleTheme()" title="{{ isDarkMode ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro' }}">
+    <button 
+      (click)="toggleTheme()" 
+      title="{{ isDarkMode ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro' }}">
       <span>{{ isDarkMode ? '☀️' : '🌙' }}</span>
     </button>
   </div>
 
-  <div class="buscador">
-    <input [(ngModel)]="buscar" placeholder="Busca por nombre, tecnología o descripción..." />
+  <!-- Buscador -->
+  <div class="buscador ">
+    <input 
+      type="search" 
+      [(ngModel)]="buscar" 
+      placeholder="Busca por nombre, tecnología o descripción..." 
+      class="form-control" 
+      style="width: 80%; max-width: 500px;">
   </div>
 
-  <div *ngIf="errorMessage" class="error-message">
+  <!-- Mensaje de error -->
+  <div *ngIf="errorMessage" class="error-message alert alert-danger" role="alert">
     {{ errorMessage }}
   </div>
 
+  <!-- Lista de proyectos -->
   <div class="proyectos-container">
-    <div *ngFor="let proyecto of (proyectos | filter: buscar).slice().reverse()" class="tarjeta-proyecto">
-      <img [src]="proyecto.imagen" alt="Imagen de {{proyecto.nombre}}" />
-      <h3>{{ proyecto.nombre }}</h3>
-      <p>{{ proyecto.descripcion }}</p>
-      <div class="tecnologias">
-        <span class="tech-tag" *ngFor="let tech of proyecto.tecnologias | slice:0:3" [attr.data-tech]="tech">
-          {{ tech }}
-        </span>
-        <span class="tech-more" *ngIf="proyecto.tecnologias.length > 3">
-          +{{ proyecto.tecnologias.length - 3 }}
-        </span>
+    <div 
+      *ngFor="let proyecto of (proyectos | filter: buscar).slice().reverse(); let i = index" 
+      class="tarjeta-proyecto">
+      
+      <img [src]="proyecto.imagen" alt="{{proyecto.nombre}}">
+      
+      <div class="card-body">
+        <h3>{{ proyecto.nombre }}</h3>
+        <p>{{ proyecto.descripcion }}</p>
+
+        <!-- Botón para abrir el offcanvas -->
+        <button 
+          type="button" 
+          class="btn-tech btn btn-sm btn-link p-0 text-body-secondary"
+          data-bs-toggle="offcanvas"
+          [attr.data-bs-target]="'#offcanvasTech' + i"
+          aria-controls="offcanvasTech">
+          Ver tecnologías
+        </button>
+
+        <!-- Offcanvas para mostrar tecnologías -->
+        <div 
+          class="offcanvas offcanvas-bottom" 
+          [id]="'offcanvasTech' + i"
+          tabindex="-1"
+          aria-labelledby="offcanvasTechLabel">
+          <div class="offcanvas-header">
+            <h5 id="offcanvasTechLabel">Tecnologías</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <div class="d-flex flex-wrap gap-2">
+              <span 
+                *ngFor="let tech of proyecto.tecnologias" 
+                class="tech-tag" 
+                [attr.data-tech]="tech">
+                {{ tech }}
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
