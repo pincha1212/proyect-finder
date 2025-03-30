@@ -143,5 +143,15 @@
       "Vercel"
     ],
     "imagen": "https://i.ibb.co/tTzMw3R4/El-Ahorcado-web-26-03-2025-00-13.png"
+  },
+  {
+    "nombre": "Generador de Pixel-Art",
+    "descripcion": "aplicacion simple de Pixel-Art",
+    "tecnologias": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "imagen": "https://i.ibb.co/Ldc1v06H/pixelart.jpg"
   }
 ]
